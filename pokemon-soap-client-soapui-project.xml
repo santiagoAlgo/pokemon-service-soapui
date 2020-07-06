@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="7a033466-bad6-4fa9-9051-2be92eb522b6" activeEnvironment="Default" name="pokemon-soap-client" resourceRoot="" soapui-version="5.5.0" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="ec286b68-2d26-486c-8922-29f22c4d0615" wsaVersion="NONE" name="PokemonDetailsPortSoap11" type="wsdl" bindingName="{http://www.creatures.com/xml/pokemon}PokemonDetailsPortSoap11" soapVersion="1_1" anonymous="optional" definition="http://localhost:9595/creatures/pokemonWsdl.wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="http://localhost:9595/creatures/pokemonWsdl.wsdl"><con:part><con:url>http://localhost:9595/creatures/pokemonWsdl.wsdl</con:url><con:content><![CDATA[<wsdl:definitions targetNamespace="http://www.creatures.com/xml/pokemon" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:sch="http://www.creatures.com/xml/pokemon" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://www.creatures.com/xml/pokemon">
+  <wsdl:types>
+    <xs:schema elementFormDefault="qualified" targetNamespace="http://www.creatures.com/xml/pokemon" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="PokemonDetailsRequest">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="name" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="PokemonDetailsResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="Pokemon" type="tns:Pokemon"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:complexType name="PokemonItems">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" name="items" type="tns:Item"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="PokemonAbilities">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" name="abilities" type="tns:Ability"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="PokemonMoves">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" name="moves" type="tns:Move"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="PokemonBasedExp">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" name="basedExperiences" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="Pokemon">
+        <xs:sequence>
+          <xs:element name="name" type="xs:string"/>
+          <xs:element name="weight" type="xs:int"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="Item">
+        <xs:sequence>
+          <xs:element name="name" type="xs:string"/>
+          <xs:element name="url" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="Move">
+        <xs:sequence>
+          <xs:element name="name" type="xs:string"/>
+          <xs:element name="url" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="Ability">
+        <xs:sequence>
+          <xs:element name="name" type="xs:string"/>
+          <xs:element name="url" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="PokemonItemsRequest">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="name" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="PokemonItemsResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="PokemonItems" type="tns:PokemonItems"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="PokemonAbilitiesRequest">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="name" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="PokemonAbilitiesResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="PokemonAbilities" type="tns:PokemonAbilities"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="PokemonMovesRequest">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="name" type="xs:string"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="PokemonMovesResponse">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element name="PokemonMoves" type="tns:PokemonMoves"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:simpleType name="itemsList">
+        <xs:list itemType="xs:string"></xs:list>
+      </xs:simpleType>
+      <!--xs:element name="PokemonHabilitiesRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="name" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    
+     <xs:element name="PokemonHabilitiesResponse">
+
+    </xs:element>
+    
+    
+        <xs:element name="PokemonItemsRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="name" type="xs:string"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+    
+          <xs:element name="PokemonItemsResponse">
+
+        </xs:complexType>
+    </xs:element-->
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="PokemonDetailsRequest">
+    <wsdl:part element="tns:PokemonDetailsRequest" name="PokemonDetailsRequest"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="PokemonItemsRequest">
+    <wsdl:part element="tns:PokemonItemsRequest" name="PokemonItemsRequest"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="PokemonMovesRequest">
+    <wsdl:part element="tns:PokemonMovesRequest" name="PokemonMovesRequest"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="PokemonMovesResponse">
+    <wsdl:part element="tns:PokemonMovesResponse" name="PokemonMovesResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="PokemonAbilitiesRequest">
+    <wsdl:part element="tns:PokemonAbilitiesRequest" name="PokemonAbilitiesRequest"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="PokemonDetailsResponse">
+    <wsdl:part element="tns:PokemonDetailsResponse" name="PokemonDetailsResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="PokemonAbilitiesResponse">
+    <wsdl:part element="tns:PokemonAbilitiesResponse" name="PokemonAbilitiesResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="PokemonItemsResponse">
+    <wsdl:part element="tns:PokemonItemsResponse" name="PokemonItemsResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="PokemonDetailsPort">
+    <wsdl:operation name="PokemonDetails">
+      <wsdl:input message="tns:PokemonDetailsRequest" name="PokemonDetailsRequest"></wsdl:input>
+      <wsdl:output message="tns:PokemonDetailsResponse" name="PokemonDetailsResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PokemonItems">
+      <wsdl:input message="tns:PokemonItemsRequest" name="PokemonItemsRequest"></wsdl:input>
+      <wsdl:output message="tns:PokemonItemsResponse" name="PokemonItemsResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PokemonMoves">
+      <wsdl:input message="tns:PokemonMovesRequest" name="PokemonMovesRequest"></wsdl:input>
+      <wsdl:output message="tns:PokemonMovesResponse" name="PokemonMovesResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PokemonAbilities">
+      <wsdl:input message="tns:PokemonAbilitiesRequest" name="PokemonAbilitiesRequest"></wsdl:input>
+      <wsdl:output message="tns:PokemonAbilitiesResponse" name="PokemonAbilitiesResponse"></wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="PokemonDetailsPortSoap11" type="tns:PokemonDetailsPort">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="PokemonDetails">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="PokemonDetailsRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="PokemonDetailsResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PokemonItems">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="PokemonItemsRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="PokemonItemsResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PokemonMoves">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="PokemonMovesRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="PokemonMovesResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PokemonAbilities">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="PokemonAbilitiesRequest">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="PokemonAbilitiesResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="PokemonDetailsPortService">
+    <wsdl:port binding="tns:PokemonDetailsPortSoap11" name="PokemonDetailsPortSoap11">
+      <soap:address location="http://localhost:9595/creatures/pokemon-details"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>http://localhost:9595/creatures/pokemon-details</con:endpoint></con:endpoints><con:operation id="b591f21c-4a20-4c2d-8fa5-50d73f166f9e" isOneWay="false" action="" name="PokemonAbilities" bindingOperationName="PokemonAbilities" type="Request-Response" outputName="PokemonAbilitiesResponse" inputName="PokemonAbilitiesRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="29b54a6b-e9f4-4fa2-8502-044d2bb80aa7" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:9595/creatures/pokemon-details</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:pok="http://www.creatures.com/xml/pokemon">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <pok:PokemonAbilitiesRequest>\r
+         <pok:name>Ditto</pok:name>\r
+      </pok:PokemonAbilitiesRequest>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.creatures.com/xml/pokemon/PokemonDetailsPort/PokemonAbilitiesRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="57dccb53-0509-458c-ad3f-b02a3a0b4e66" isOneWay="false" action="" name="PokemonDetails" bindingOperationName="PokemonDetails" type="Request-Response" outputName="PokemonDetailsResponse" inputName="PokemonDetailsRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="76208189-57dc-49ff-b3f7-f39e2d5bdf36" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:9595/creatures/pokemon-details</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:pok="http://www.creatures.com/xml/pokemon">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <pok:PokemonDetailsRequest>\r
+         <pok:name>ditto</pok:name>\r
+      </pok:PokemonDetailsRequest>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.creatures.com/xml/pokemon/PokemonDetailsPort/PokemonDetailsRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="96bea3bf-84bd-4260-97af-c40bf9046303" isOneWay="false" action="" name="PokemonItems" bindingOperationName="PokemonItems" type="Request-Response" outputName="PokemonItemsResponse" inputName="PokemonItemsRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="8ca3b1d7-5d75-4bcc-8226-33e65153bf06" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:9595/creatures/pokemon-details</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:pok="http://www.creatures.com/xml/pokemon">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <pok:PokemonItemsRequest>\r
+         <pok:name>mew</pok:name>\r
+      </pok:PokemonItemsRequest>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.creatures.com/xml/pokemon/PokemonDetailsPort/PokemonItemsRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="01ff4636-07c2-4cc2-b207-f8bd823138ae" isOneWay="false" action="" name="PokemonMoves" bindingOperationName="PokemonMoves" type="Request-Response" outputName="PokemonMovesResponse" inputName="PokemonMovesRequest" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="787e7412-9fa9-4ed4-ba73-8040eca2124c" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>http://localhost:9595/creatures/pokemon-details</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:pok="http://www.creatures.com/xml/pokemon">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <pok:PokemonMovesRequest>\r
+         <pok:name>Lucario</pok:name>\r
+      </pok:PokemonMovesRequest>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://www.creatures.com/xml/pokemon/PokemonDetailsPort/PokemonMovesRequest"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/></con:soapui-project>
